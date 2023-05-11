@@ -40,8 +40,8 @@ export default {
 			</p>
 			<div class="flex justify-center sm:block">
 				<a
-					download="Stoman-Resume.pdf"
-					href="/files/Stoman-Resume.pdf"
+					download="林剑豪 - 用户体验设计师【6年】- 作品集.pdf"
+					href="/files/林剑豪 - 用户体验设计师【6年】- 作品集.pdf"
 					class="flex justify-center items-center w-36 sm:w-48 mt-12 mb-6 sm:mb-0 text-lg border border-indigo-200 dark:border-ternary-dark py-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-50 focus:ring-1 focus:ring-indigo-900 hover:bg-indigo-500 text-gray-500 hover:text-white duration-500"
 					aria-label="Download Resume"
 				>
@@ -51,7 +51,22 @@ export default {
 					></i>
 					<span
 						class="text-sm sm:text-lg font-general-medium duration-100"
-						>Download CV</span
+						>下载作品集</span
+					></a
+				>
+				<a
+					download="林剑豪 - 用户体验设计师 - 简历.pdf"
+					href="/files/林剑豪 - 用户体验设计师 - 简历.pdf"
+					class="flex justify-center items-center w-36 sm:w-48 mt-12 mb-6 sm:mb-0 text-lg border border-indigo-200 dark:border-ternary-dark py-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-50 focus:ring-1 focus:ring-indigo-900 hover:bg-indigo-500 text-gray-500 hover:text-white duration-500"
+					aria-label="Download Resume"
+				>
+					<i
+						data-feather="arrow-down-circle"
+						class="ml-0 sm:ml-1 mr-2 sm:mr-3 w-5 sm:w-6 duration-100"
+					></i>
+					<span
+						class="text-sm sm:text-lg font-general-medium duration-100"
+						>下载简历</span
 					></a
 				>
 			</div>

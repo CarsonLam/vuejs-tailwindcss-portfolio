@@ -1,10 +1,10 @@
+<!-- 作品详情页 -->
 <script>
 import feather from 'feather-icons';
 import ProjectHeader from '../components/projects/ProjectHeader.vue';
 import ProjectGallery from '../components/projects/ProjectGallery.vue';
 import ProjectInfo from '../components/projects/ProjectInfo.vue';
 import ProjectRelatedProjects from '../components/projects/ProjectRelatedProjects.vue';
-
 export default {
 	name: 'Projects',
 	components: {
@@ -13,8 +13,13 @@ export default {
 		ProjectInfo,
 		ProjectRelatedProjects,
 	},
+	
+
+
+
 	data: () => {
 		return {
+			clickProjectSingle: {},
 			singleProjectHeader: {
 				singleProjectTitle: 'Project Management UI',
 				singleProjectDate: 'Jul 26, 2021',
@@ -163,11 +168,22 @@ export default {
 	},
 	mounted() {
 		feather.replace();
+		this.getclickProjectSingle();
 	},
+	
 	updated() {
 		feather.replace();
 	},
-	methods: {},
+	methods: {
+
+
+		getclickProjectSingle() {
+			this.clickProjectSingle = localStorage.getItem("clickProjectSingle");
+			// this.clickProjectSingle = data
+		}
+		
+
+	},
 };
 </script>
 
@@ -177,7 +193,7 @@ export default {
 		<ProjectHeader :singleProjectHeader="singleProjectHeader" />
 
 		<!-- Project gallery -->
-		<ProjectGallery :projectImages="projectImages" />
+		<ProjectGallery :projectImages="projectImages" :clickProjectSingle="clickProjectSingle" />
 
 		<!-- Project information -->
 		<ProjectInfo :projectInfo="projectInfo" />

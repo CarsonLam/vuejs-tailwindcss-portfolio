@@ -1,8 +1,10 @@
+<!-- 作品列表模块 -->
 <script>
 import feather from 'feather-icons';
 import ProjectsFilter from './ProjectsFilter.vue';
 import ProjectSingle from './ProjectSingle.vue';
 import projects from '../../data/projects';
+
 
 export default {
 	components: { ProjectSingle, ProjectsFilter },
@@ -32,7 +34,7 @@ export default {
 				let category =
 					item.category.charAt(0).toUpperCase() +
 					item.category.slice(1);
-				console.log(category);
+				// console.log(category);
 				return category.includes(this.selectedCategory);
 			});
 		},
@@ -41,6 +43,11 @@ export default {
 			let project = new RegExp(this.searchProject, 'i');
 			return this.projects.filter((el) => el.title.match(project));
 		},
+
+		clickProjectSingle(index) {
+			localStorage.setItem("clickProjectSingle", index);
+			
+			}
 	},
 	mounted() {
 		feather.replace();
@@ -136,9 +143,10 @@ export default {
 			class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-10"
 		>
 			<ProjectSingle
-				v-for="project in filteredProjects"
+				v-for="(project, index) in filteredProjects"
 				:key="project.id"
 				:project="project"
+				@click="clickProjectSingle(index)"
 			/>
 		</div>
 	</section>
