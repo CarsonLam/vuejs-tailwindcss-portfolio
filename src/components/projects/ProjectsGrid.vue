@@ -143,10 +143,10 @@ export default {
 			class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-10"
 		>
 			<ProjectSingle
-				v-for="(project, index) in filteredProjects"
+				v-for="project in filteredProjects"
 				:key="project.id"
 				:project="project"
-				@click="clickProjectSingle(index)"
+				@click="clickProjectSingle(project.id)"
 			/>
 		</div>
 	</section>
